@@ -60,6 +60,28 @@ for (const btn of callButtons) {
     });
 }
 
+// copy button 
+
+const copyButtons = document.querySelectorAll('.copy-button')
+for(const btn of copyButtons){
+  btn.addEventListener('click', function(){
+    const card = btn.closest('.card')
+    const text = card.querySelector('.service-number').innerText
+    navigator.clipboard.writeText(text)
+    btn.innerText = "Copied!"
+    setTimeout(()=> btn.innerText = "Copy", 1500)
+  })
+}
+
+// copy count
+const copyCounts = document.querySelectorAll('.copy-button')
+    for(const btn of copyCounts){
+        btn.addEventListener('click', function(e){
+        e.preventDefault()
+        counter++;
+        document.getElementById('copy-count').innerText = counter;    
+    })
+}
 
 // clear button 
 document.getElementById('clear-button').addEventListener('click',function(e){
