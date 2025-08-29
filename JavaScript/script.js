@@ -68,7 +68,7 @@ for(const btn of copyButtons){
     const card = btn.closest('.card')
     const text = card.querySelector('.service-number').innerText
     navigator.clipboard.writeText(text)
-    btn.innerText = "Copied!"
+    btn.innerText = "Copied!" ,alert("Your Information is Copy Successful")
     setTimeout(()=> btn.innerText = "Copy", 1500)
   })
 }
